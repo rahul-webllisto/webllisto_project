@@ -40,6 +40,10 @@
         min-height: 0px;
         height: auto; 
     }
+
+    .section1{
+        padding-top: 100px!important;
+    }
     
     .section1 .main_slide .col-md-6 {
         max-width: 100%;
@@ -278,7 +282,7 @@
         width: 48%;
         flex: 0 0 50%; 
     }    
-    
+   
 } 
 
 @media all and (max-width: 480px) {
@@ -291,7 +295,8 @@
         right: 15px;
         top: 15px;
     }
- 
+
+
     .section1 .slick-dots li button, .section1 .cont_950 ul li a {
         height: 45px;
         background-position: 36px center;

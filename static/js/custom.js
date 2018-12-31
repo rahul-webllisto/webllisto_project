@@ -148,3 +148,34 @@ jQuery(window).scroll(function() {
     }
 });   
 
+
+// slider animations
+var slide_btn = [
+                    'slick-slide-control00',
+                    'slick-slide-control01',
+                    'slick-slide-control02',
+                    'slick-slide-control03'
+                ];
+var slide_img = [
+                    'h_img_1',
+                    'h_img_2',
+                    'h_img_3',
+                    'h_img_4'
+                ];
+    
+$(document).ready(()=>{
+    $('#slick-slide-control00').on('click', (event)=> {slider_anim('slick-slide-control00')});
+    $('#slick-slide-control01').on('click', (event)=> {slider_anim('slick-slide-control01')});
+    $('#slick-slide-control02').on('click', (event)=> {slider_anim('slick-slide-control02')});
+    $('#slick-slide-control03').on('click', (event)=> {slider_anim('slick-slide-control03')});
+})
+
+function slider_anim(btn) {
+    for (var i = 0; i < slide_btn.length; i++) {
+        if (btn == slide_btn[i]) {
+            $("#"+slide_img[i]).addClass('animated zoomIn');
+        }else{
+            $("#"+slide_img[i]).removeClass('animated zoomIn');
+        }
+    }
+}
