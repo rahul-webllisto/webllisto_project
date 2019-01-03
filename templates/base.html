@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en"> 
+    <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <!-- Bootstrap CSS -->
+      <link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,700,900" rel="stylesheet">
+      <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+      <link rel="stylesheet" href="{% static 'css/all.min.css' %}" type="text/css">
+      <link rel="stylesheet" type="text/css" href="{% static 'css/slick.css' %}">
+      <link rel="stylesheet" type="text/css" href="{% static 'css/slick-theme.css' %}">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+      <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+    
+      <link rel="stylesheet" href="{% static 'css/jquery.pagepiling.css' %}" type="text/css" />
+      <link rel="stylesheet" href="{% static 'css/responsive.css' %}" type="text/css">
+      
+      
+      <title>Webllisto Technologies - App Development | Web Development | IOS Development | Graphics Designing</title>
+
+    </head>
+    
+  <body>
+      
+    <!--Header Start-->
+    <header id="header" class="header fixed-top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12"> 
+                    <a class="logo" href="/"> 
+                          <img src="{% static 'images/webllisto_logo.png' %}" class="img-fluid" alt="Webllisto Logo">
+                    </a>
+                    
+                    <ul class="social_links">  
+                        <li><a href="#"><i class="fab fa-skype"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    </ul>
+                    
+                    <a class="megamenu_toggle" href="#">
+                        <div class="megamenu_icon">
+                            <div class="bar1"></div>
+                            <div class="bar2"></div>
+                            <div class="bar3"></div>
+                        </div>
+                    </a>
+                </div>    
+            </div>    
+        </div>    
+    </header>
+    <!--Header End-->
+    {% block content %}
+    {% endblock %}
+
+    <!-- Optional JavaScript -->
+    <script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>  
+    <script type="text/javascript" src="{% static 'js/jquery.pagepiling.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.mousewheel.js' %}"></script> 
+    <script type="text/javascript" src="{% static 'js/jquery-migrate-1.2.1.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/slick.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/all.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+
+  </body>
+</html>
