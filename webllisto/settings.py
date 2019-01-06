@@ -123,10 +123,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
 
 
 STATICFILES_DIRS = [
-<<<<<<< HEAD
      os.path.join(BASE_DIR, "static"),
- ]
-=======
-    os.path.join(BASE_DIR, "static"),
 ]
->>>>>>> 0745f40286be13f033e374b265d2f671a0137644
