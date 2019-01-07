@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load widget_tweaks %}
 {% block content %}
 
 
@@ -449,45 +450,46 @@ sit amet nibh vulputate cursus a sit amet mauris.</p>
 
                         </div>
                     <h3 class="heading_2 mb_40">Anyway..! <span>Send your resume</span></h3>
-                        <form class='career_form' action=''>
+                        <form class='career_form' action='' method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
                             <div class='form-row'>
                                 <div class='col-md-4'>
                                     <div class='form-group'>
-                                        <input type="text" name='candidate_name' placeholder='Name' class='form-control' />
+                                        {{resume.user_name | add_class:"form-control" | attr:"placeholder:Name"}}
                                     </div>
                                 </div>
                                 <div class='col-md-4'>
                                     <div class='form-group'>
-                                        <input type="text" name='candidate_phone' placeholder='Phone' class='form-control' />
+                                        {{resume.user_phone | add_class:"form-control" | attr:"placeholder:Phone"}}
                                     </div>
                                 </div>
                                 <div class='col-md-4'>
                                     <div class='form-group'>
-                                        <input type="email" name='candidate_email' placeholder='Email' class='form-control' />
+                                        {{resume.user_email | add_class:"form-control" | attr:"placeholder:Email"}}
                                     </div>
                                 </div>
                             </div>
                             <div class='form-row'>
                                 <div class='col-md-4'>
                                     <div class='form-group'>
-                                        <input type="text" name='candidate_exp' placeholder='Experience' class='form-control' />
+                                        {{resume.user_exp | add_class:"form-control" | attr:"placeholder:Experience"}}
                                     </div>
                                 </div>
                                 <div class='col-md-4'>
                                     <div class='form-group'>
-                                        <input type="text" name='candidate_cctc' placeholder='Current CTC' class='form-control' />
+                                        {{resume.user_current_ctc | add_class:"form-control" | attr:"placeholder:Current CTC"}}
                                     </div>
                                 </div>
                                 <div class='col-md-4'>
                                     <div class='form-group'>
-                                        <input type="file" name='candidate_resume' placeholder='Experience' class='form-control' />
+                                        {{resume.user_resume | add_class:"form-control" | attr:"placeholder:Experience" | attr:"cols:0"}}
                                     </div>
                                 </div>
                             </div>
                             <div class='form-row'>
                                 <div class='col-md-8'>
                                     <div class='form-group'>
-                                        <textarea name='candidate_message' placeholder='Message' class='form-control'></textarea>
+                                        {{resume.user_msg | add_class:"form-control" | attr:"placeholder:Message" | attr:"cols:0" | attr:"rows:0"}}
                                     </div>
                                 </div>
                                 <div class='col-md-4'>
@@ -507,99 +509,76 @@ sit amet nibh vulputate cursus a sit amet mauris.</p>
     <section class="section7 career_full_page section_common clearfix">
         <img class="bg_img" src="{% static 'images/career_bg.png' %}" alt="" />  
         <div class="container"> 
-            <!--<form class='career_full_form' action=''>-->
+            <form action='' method="post" enctype="multipart/form-data">
+                {% csrf_token %}
                 <div class='form-row'>
                     <div class='col-md-3'>
                         <div class='form-group'> 
-                            <input type="text" name='c_first_name' placeholder='First Name' class='form-control' />
+                            {{apply.firstname | add_class:"form-control" | attr:"placeholder: First Name"}}
                         </div>
                     </div>
                     <div class='col-md-3'>
                         <div class='form-group'>
-                            <input type="text" name='c_last_name' placeholder='Last Name' class='form-control' />
+                            {{apply.lastname | add_class:"form-control" | attr:"placeholder: Last Name"}}
                         </div>
                     </div>
                     <div class='col-md-3'>
                         <div class='form-group'>
-                            <input type="text" name='c_father' placeholder='Fathers Name' class='form-control' />
+                            {{apply.fathername | add_class:"form-control" | attr:"placeholder: Fathers Name"}}
                         </div>
                     </div>
                     <div class='col-md-3'>
                         <div class='form-group'>
-                            <input type="text" name='c_mother' placeholder='Mothers Name' class='form-control' />
-                        </div>
-                    </div>
-                </div>
-                <div class='form-row'>
-                    <div class='col-md-3'>
-                        <div class='form-group'>
-                            <select name='c_gender' class='custom-select'>
-                                <option value=''>Gender</option>
-                                <option value=''>Male</option>
-                                <option value=''>Female</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class='col-md-3'>
-                        <div class='form-group'>
-                            <select name='c_high_qual' class='custom-select'>
-                                <option value=''>Highest Qualification</option>
-                                <option value=''>Male</option>
-                                <option value=''>Female</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class='col-md-3'>
-                        <div class='form-group'>
-                            <select name='c_qual' class='custom-select'>
-                                <option value=''>Year Of Qualification</option>
-                                <option value=''>Male</option>
-                                <option value=''>Female</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class='col-md-3'>
-                        <div class='form-group'>
-                            <select name='c_marital_status' class='custom-select'>
-                                <option value=''>Marital Status</option>
-                                <option value=''>Male</option> 
-                                <option value=''>Female</option>
-                            </select>
+                            {{apply.mothername | add_class:"form-control" | attr:"placeholder: Mothers Name"}}
                         </div>
                     </div>
                 </div>
                 <div class='form-row'>
                     <div class='col-md-3'>
                         <div class='form-group'>
-                            <select name='c_actual_exp' class='custom-select'>
-                                <option value=''>Actual Experience</option>
-                                <option value=''>Male</option>
-                                <option value=''>Female</option>
-                            </select>
+                            {{apply.gender | add_class:"custom-select"}}
                         </div>
                     </div>
                     <div class='col-md-3'>
                         <div class='form-group'>
-                            <select name='c_work_exp' class='custom-select'>
-                                <option value=''>Total Working Experience</option>
-                                <option value=''>Male</option>
-                                <option value=''>Female</option>
-                            </select>
+                            {{apply.high_qual | add_class:"custom-select"}}
                         </div>
                     </div>
                     <div class='col-md-3'>
                         <div class='form-group'>
-                            <input type="email" name='c_email' placeholder='Email ID' class='form-control' />
+                            {{apply.year_of_qual | add_class:"custom-select"}}
                         </div>
                     </div>
                     <div class='col-md-3'>
                         <div class='form-group'>
-                            <input type="text" name='c_contact' placeholder='Contact Number' class='form-control' />
+                            {{apply.marital | add_class:"custom-select"}}
+                        </div>
+                    </div>
+                </div>
+                <div class='form-row'>
+                    <div class='col-md-3'>
+                        <div class='form-group'>
+                            {{apply.act_exp | add_class:"custom-select"}}
+                        </div>
+                    </div>
+                    <div class='col-md-3'>
+                        <div class='form-group'>
+                            {{apply.total_exp | add_class:"custom-select"}}
+                        </div>
+                    </div>
+                    <div class='col-md-3'>
+                        <div class='form-group'>
+                            {{apply.emailid | add_class:"form-control" | attr:"placeholder: Email ID"}}
+                        </div>
+                    </div>
+                    <div class='col-md-3'>
+                        <div class='form-group'>
+                            {{apply.contact_no | add_class:"form-control" | attr:"placeholder: Contact Number"}}
                         </div> 
                     </div> 
                     <div class='col-md-3'>
                         <div class='form-group'>
-                            <input type="text" name='c_alt_contact' placeholder='Alternative Contact Number' class='form-control' />
+                            {{apply.contact_no | add_class:"form-control" | attr:"placeholder: Alternative Contact Number"}}
                         </div> 
                     </div> 
                 </div> 
@@ -609,27 +588,27 @@ sit amet nibh vulputate cursus a sit amet mauris.</p>
                 <div class='form-row row_25_per'> 
                     <div class='col-md-3'>
                         <div class='form-group'>
-                            <input type="text" name='c_emp_name[]' placeholder='Employer Name' class='form-control' />
+                            {{apply.employer_name | add_class:"form-control" | attr:"placeholder: Employer Name"}}
                         </div>
                     </div>
                     <div class='col-md-3'>
                         <div class='form-group'>
-                            <input type="text" name='c_emp_location[]' placeholder='Employer Location' class='form-control' />
+                            {{apply.employer_location | add_class:"form-control" | attr:"placeholder: Employer Location"}}
                         </div>
                     </div>
                     <div class='col-md-3'>
                         <div class='form-group'>
-                            <input type="text" name='c_emp_jobtitle[]' placeholder='Employer Location' class='form-control' />
+                            {{apply.employer_location | add_class:"form-control" | attr:"placeholder: Employer Location"}}
                         </div>
                     </div>
                     <div class='col-md-3'>     
                         <div class='form-group'>
-                            <input type="text" name='c_emp_startdate[]' placeholder='Start Date' class='form-control' />
+                            {{apply.startdate | add_class:"form-control" | attr:"placeholder: Start Date"}}
                         </div>
                     </div>
                     <div class='col-md-3'>
                         <div class='form-group'>
-                            <input type="text" name='c_emp_enddate[]' placeholder='End Date' class='form-control' />
+                            {{apply.endtdate | add_class:"form-control" | attr:"placeholder: End Date"}}
                         </div>
                     </div>
                 </div>
@@ -637,7 +616,7 @@ sit amet nibh vulputate cursus a sit amet mauris.</p>
                 <div class='form-row'> 
                     <div class='col-md-12'>  
                         <div class='form-group'>
-                            <input type="text" name='c_skills' placeholder='Skills' class='form-control' />
+                            {{apply.skills | add_class:"form-control" | attr:"placeholder: Skills"}}
                         </div>
                     </div>
                 </div>  
@@ -645,32 +624,32 @@ sit amet nibh vulputate cursus a sit amet mauris.</p>
                 <div class='form-row'> 
                     <div class='col-md-2'>
                         <div class='form-group'>
-                            <input type="text" name='c_state' placeholder='State' class='form-control' />
+                            {{apply.state | add_class:"form-control" | attr:"placeholder: State"}}
                         </div>
                     </div>
                     <div class='col-md-2'>
                         <div class='form-group'>
-                            <input type="text" name='c_district' placeholder='District' class='form-control' />
+                            {{apply.district | add_class:"form-control" | attr:"placeholder: District"}}
                         </div>
                     </div>
                     <div class='col-md-2'>
                         <div class='form-group'>
-                            <input type="text" name='c_city' placeholder='City' class='form-control' />
+                            {{apply.city | add_class:"form-control" | attr:"placeholder: City"}}
                         </div>
                     </div>
                     <div class='col-md-2'>      
                         <div class='form-group'>
-                            <input type="text" name='c_area' placeholder='Area' class='form-control' />
+                            {{apply.area | add_class:"form-control" | attr:"placeholder: Area"}}
                         </div>
                     </div>
                     <div class='col-md-2'>
                         <div class='form-group'>
-                            <input type="text" name='c_address[]' placeholder='Address' class='form-control' />
+                            {{apply.address | add_class:"form-control" | attr:"placeholder: Address"}}
                         </div>
                     </div>
                     <div class='col-md-2'>
                         <div class='form-group'>     
-                            <input type="text" name='c_pin[]' placeholder='Pin Code' class='form-control' />
+                            {{apply.pincode | add_class:"form-control" | attr:"placeholder: Pin Code"}}
                         </div>
                     </div>
                 </div>
@@ -678,7 +657,7 @@ sit amet nibh vulputate cursus a sit amet mauris.</p>
                 <div class='form-row'>
                     <div class='col-md-8'>
                         <div class='form-group'>     
-                            <input type="file" name='c_resume[]' placeholder='Resume' class='form-control' />
+                            {{apply.resume | add_class:"form-control" | attr:"placeholder: Resume"}}
                         </div>
                     </div>
                     <div class='col-md-4'>
@@ -687,7 +666,7 @@ sit amet nibh vulputate cursus a sit amet mauris.</p>
                          </div>
                     </div>
                 </div>
-            <!--</form>-->
+            </form>
         </div>
     </section>
     
@@ -865,21 +844,22 @@ Mauris in erat justo.</p>
               <span aria-hidden="true">&times;</span>
             </button>-->
                 <form action="" method="post" class="contact_form_design" > 
+                    {%csrf_token%}
                     <!--<h2>Get In Touch With Us</h2>--> 
                     <div class='contact_text'>Leave us your contacts and we will call to arrage a meeting.
 </div>
                     <div class="cont_form_body">
                     <div class="form-group"> 
-                        <input class="form-control" type="text" name="user_name" value="" placeholder = "Name" />
+                        {{contact.user_name}}
                     </div>
                     <div class="form-group">
-                        <input class="form-control" type="text" name="user_phone" value="" placeholder="Phone"/>
+                        {{contact.user_phone}}
                     </div>        
                     <div class="form-group">
-                        <input class="form-control" type="text" name="user_email" value="" placeholder="Email"/>
+                        {{contact.user_email}}
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control"  placeholder="The Details"></textarea>
+                        {{contact.user_details}}
                     </div>
                     <button type="submit" class="btn-primary btn btn-orange">To Send</button>
                     </div>
