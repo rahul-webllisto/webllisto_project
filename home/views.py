@@ -44,7 +44,7 @@ def home_page(request):
 
 	if request.method == 'POST':
 		applyform = JobApplyForm(request.POST, request.FILES)
-
+		print(applyform.errors)
 		if applyform.is_valid():
 			applyform.save()
 			return HttpResponse('Your form submit successfully.')

@@ -1,4 +1,5 @@
 from django.db import models
+from webllisto import settings
 
 # Create your models here.
 class Teacher(models.Model):
@@ -32,7 +33,7 @@ class JobApply(models.Model):
 	#Choices
 	Gender = (('male', 'Male'),('female', 'Female'))
 	Qual = (('B.E', 'B.E'),('M.Sc', 'M.Sc'))
-	YoQual = ((2015,2015), (2016,2016), (2017,2017))
+	YoQual = (('2015','2015'), ('2016','2016'), ('2017','2017'))
 	Marital = (('married','married'), ('un-married','un-married'))
 	Exp = (('1 year', '1 year'), ('2 year', '2 year'), ('3 year', '3 year'))
 	TExp = (('1 year', '1 year'), ('2 year', '2 year'), ('3 year', '3 year'))
@@ -44,13 +45,13 @@ class JobApply(models.Model):
 	lastname = models.CharField(max_length=100)
 	fathername = models.CharField(max_length=100)
 	mothername = models.CharField(max_length=100)
-	gender = models.CharField(max_length=6, choices=Gender)
-	high_qual = models.CharField(max_length=6, choices=Qual)
-	year_of_qual = models.CharField(max_length=6, choices=YoQual)
-	marital = models.CharField(max_length=6, choices=Marital)
-	act_exp = models.CharField(max_length=6, choices=Exp)
-	total_exp = models.CharField(max_length=6, choices=TExp)
-	emailid = models.EmailField(max_length=50)
+	gender = models.CharField(max_length=50, choices=Gender)
+	high_qual = models.CharField(max_length=50, choices=Qual)
+	year_of_qual = models.CharField(max_length=50, choices=YoQual)
+	marital = models.CharField(max_length=50, choices=Marital)
+	act_exp = models.CharField(max_length=50, choices=Exp)
+	total_exp = models.CharField(max_length=50, choices=TExp)
+	emailid = models.EmailField(max_length=255)
 	contact_no = models.SmallIntegerField()
 	alt_contact_no = models.SmallIntegerField()
 
@@ -68,7 +69,7 @@ class JobApply(models.Model):
 	area = models.CharField(max_length=100)
 	address = models.CharField(max_length=100)
 	pincode = models.SmallIntegerField()
-	resume = models.FileField(max_length=50, upload_to='uploads/%Y/%m/%d/')
+	resume = models.FileField(max_length=255, upload_to='uploads/%Y/%m/%d/')
 
 
 
