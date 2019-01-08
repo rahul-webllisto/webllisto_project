@@ -30,27 +30,17 @@ class CollectResume(models.Model):
 	current_date = models.DateTimeField(auto_now=True)
 
 class JobApply(models.Model):
-	#Choices
-	Gender = (('male', 'Male'),('female', 'Female'))
-	Qual = (('B.E', 'B.E'),('M.Sc', 'M.Sc'))
-	YoQual = (('2015','2015'), ('2016','2016'), ('2017','2017'))
-	Marital = (('married','married'), ('un-married','un-married'))
-	Exp = (('1 year', '1 year'), ('2 year', '2 year'), ('3 year', '3 year'))
-	TExp = (('1 year', '1 year'), ('2 year', '2 year'), ('3 year', '3 year'))
-
-
-
 
 	firstname = models.CharField(max_length=100)
 	lastname = models.CharField(max_length=100)
 	fathername = models.CharField(max_length=100)
 	mothername = models.CharField(max_length=100)
-	gender = models.CharField(max_length=50, choices=Gender)
-	high_qual = models.CharField(max_length=50, choices=Qual)
-	year_of_qual = models.CharField(max_length=50, choices=YoQual)
-	marital = models.CharField(max_length=50, choices=Marital)
-	act_exp = models.CharField(max_length=50, choices=Exp)
-	total_exp = models.CharField(max_length=50, choices=TExp)
+	gender = models.CharField(max_length=50)
+	high_qual = models.CharField(max_length=50)
+	year_of_qual = models.CharField(max_length=50)
+	marital = models.CharField(max_length=50)
+	act_exp = models.CharField(max_length=50)
+	total_exp = models.CharField(max_length=50)
 	emailid = models.EmailField(max_length=255)
 	contact_no = models.SmallIntegerField()
 	alt_contact_no = models.SmallIntegerField()

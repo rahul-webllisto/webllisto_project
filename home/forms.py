@@ -18,7 +18,22 @@ class CollectResumeForm(ModelForm):
 		model = CollectResume
 		fields = '__all__'
 
-class JobApplyForm(ModelForm):
+class JobApplyForm(forms.ModelForm):
+
+	Gender = (('Gender','Gender'),('Male', 'Male'),('Female', 'Female'))
+	Qual = (('qual','Qualification'),('B.E', 'B.E'),('M.Sc', 'M.Sc'))
+	YoQual = (('yoq','Year Of Qualification'),('2015','2015'), ('2016','2016'), ('2017','2017'))
+	Marital = (('Marital','Marital Status'),('married','Married'), ('un-married','Un-married'))
+	Exp = (('Exp','Experience'),('1 year', '1 year'), ('2 year', '2 year'), ('3 year', '3 year'))
+	TExp = (('TExp','Total Experience'),('1 year', '1 year'), ('2 year', '2 year'), ('3 year', '3 year'))
+
+	gender = forms.ChoiceField(choices=Gender, label='Gender')
+	high_qual = forms.ChoiceField(choices=Qual, label='Qualification')
+	year_of_qual = forms.ChoiceField(choices=YoQual,label='Year Of Qualification')
+	marital = forms.ChoiceField(choices=Marital, label='Marital Status')
+	act_exp = forms.ChoiceField(choices=Exp, label='Experience')
+	total_exp = forms.ChoiceField(choices=TExp, label='Total Experience')
+
 	class Meta:
 		model = JobApply
 		fields = '__all__'
