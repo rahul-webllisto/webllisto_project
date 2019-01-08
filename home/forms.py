@@ -1,3 +1,4 @@
+from bootstrap_datepicker_plus import DatePickerInput
 from django import forms
 from django.forms import ModelForm
 from .models import *
@@ -22,3 +23,7 @@ class JobApplyForm(ModelForm):
 	class Meta:
 		model = JobApply
 		fields = '__all__'
+		widgets = {
+		            'startdate': DatePickerInput(format='%Y-%m-%d'), # default date-format %m/%d/%Y will be used
+		            'endtdate': DatePickerInput(format='%Y-%m-%d'), # specify date-frmat
+		        }

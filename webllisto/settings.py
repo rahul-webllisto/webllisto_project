@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'widget_tweaks',
-    'home'
+    'django_forms_bootstrap',
+    'home',
+    'bootstrap_datepicker_plus',
 ]
 
 MIDDLEWARE = [
@@ -100,6 +102,10 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+BOOTSTRAP4 = {
+    'include_jquery': True,
+}
 
 
 # Internationalization
