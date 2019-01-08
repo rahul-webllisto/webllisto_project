@@ -179,3 +179,5 @@ function slider_anim(btn) {
         }
     }
 }
+
+$('[data-toggle="datepicker"]').datepicker();

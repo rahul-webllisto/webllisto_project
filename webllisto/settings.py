@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'django_forms_bootstrap',
     'home',
-    'bootstrap_datepicker_plus',
 ]
 
 MIDDLEWARE = [
