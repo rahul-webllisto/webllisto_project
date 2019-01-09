@@ -179,3 +179,15 @@ function slider_anim(btn) {
         }
     }
 }
+
+// datepicker 
+
+// $( function() {
+//     $( "#id_startdate" ).datepicker();
+// } );
+
+// $( function() {
+//     $( "#id_endtdate" ).datepicker();
+// } );
+
+$('[data-toggle="datepicker"]').datepicker();

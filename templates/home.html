@@ -3,7 +3,6 @@
 {% load widget_tweaks %}
 {% block content %}
 
-
     <div class="menu_section_full">
         <a class="megamenu_toggle2" href="#">
             <div class="megamenu_icon">
@@ -588,12 +587,12 @@ sit amet nibh vulputate cursus a sit amet mauris.</p>
                 <div class='form-row row_25_per'> 
                     <div class='col-md-3'>
                         <div class='form-group'>
-                            {{apply.employer_name | add_class:"form-control" | attr:"placeholder: Employer Name"}}
+                            {{apply.employer_fname | add_class:"form-control" | attr:"placeholder: Employer First Name"}}
                         </div>
                     </div>
                     <div class='col-md-3'>
                         <div class='form-group'>
-                            {{apply.employer_location | add_class:"form-control" | attr:"placeholder: Employer Location"}}
+                            {{apply.employer_lname | add_class:"form-control" | attr:"placeholder: Employer Last Name"}}
                         </div>
                     </div>
                     <div class='col-md-3'>
@@ -868,6 +867,6 @@ Mauris in erat justo.</p>
       </div>
     </div>
      
-    
+ 
 
 {% endblock %}
