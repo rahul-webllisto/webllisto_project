@@ -34,6 +34,7 @@ class JobApplyForm(forms.ModelForm):
 	act_exp = forms.ChoiceField(choices=Exp, label='Experience')
 	total_exp = forms.ChoiceField(choices=TExp, label='Total Experience')
 
+<<<<<<< HEAD
 	startdate = forms.DateField(widget= forms.DateInput(attrs={'class':'datepicker',  'data-toggle':'datepicker'}))
 	# widget = {'startdate': forms.DateInput(attrs={'class':'datepicker'})}
 	endtdate = forms.DateField(widget = forms.DateInput(attrs={'class':'datepicker', 'data-toggle':'datepicker'}))
@@ -41,3 +42,9 @@ class JobApplyForm(forms.ModelForm):
 	class Meta:
 		model = JobApplyTables
 		fields = '__all__'
+=======
+	class Meta:
+		model = JobApply
+		fields = '__all__'
+		
+>>>>>>> d8bda7b75b3fa99eac7fd50b7e8259f37865026e

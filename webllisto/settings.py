@@ -25,7 +25,7 @@ SECRET_KEY = '22a@a44--mizf)+wpf%j8njmtbwwuu0zdfnm$vxsfx&v7*ti%j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0:8001','0.0.0.0','localhost','127.0.0.1']
+ALLOWED_HOSTS = ['0.0.0.0:8001','0.0.0.0','localhost','127.0.0.1', 'webllisto.com','www.webllisto.com']
 
 
 # Application definition
@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'widget_tweaks',
-    'home'
+    'django_forms_bootstrap',
+    'home',
 ]
 
 MIDDLEWARE = [
@@ -100,6 +101,10 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+BOOTSTRAP4 = {
+    'include_jquery': True,
+}
 
 
 # Internationalization

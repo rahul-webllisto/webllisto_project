@@ -180,17 +180,4 @@ function slider_anim(btn) {
     }
 }
 
-<<<<<<< HEAD
-// datepicker 
-
-// $( function() {
-//     $( "#id_startdate" ).datepicker();
-// } );
-
-// $( function() {
-//     $( "#id_endtdate" ).datepicker();
-// } );
-
-=======
->>>>>>> d8bda7b75b3fa99eac7fd50b7e8259f37865026e
 $('[data-toggle="datepicker"]').datepicker();
