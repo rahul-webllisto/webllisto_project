@@ -29,12 +29,7 @@ class CollectResume(models.Model):
 	user_msg = models.TextField(max_length=225)
 	current_date = models.DateTimeField(auto_now=True)
 
-<<<<<<< HEAD
-class JobApplyTables(models.Model):
-
-=======
 class JobApply(models.Model):
->>>>>>> d8bda7b75b3fa99eac7fd50b7e8259f37865026e
 
 	firstname = models.CharField(max_length=100)
 	lastname = models.CharField(max_length=100)

@@ -5,4 +5,4 @@ from home.models import *
 
 admin.site.register(Contact)
 admin.site.register(CollectResume)
-admin.site.register(JobApplyTables)
+admin.site.register(JobApply)
